@@ -1,0 +1,198 @@
+ /* This is a comment, it does not affect the code. */
+/* It describes our first set of design rules (CSS) */
+
+/* 1. Reset: Removes default browser styling for a clean start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Body Styles: Sets the background color and main font for the entire template */
+body {
+    background-color: #f4f4f9; /* A light, clean off-white background color */
+    font-family: Arial, sans-serif; /* A professional, easy-to-read font */
+    color: #333; /* Dark gray text color */
+}   
+/* --- HEADER AND NAVIGATION STYLES --- */
+
+.main-header {
+    /* Uses Flexbox to position the logo and navigation side-by-side */
+    display: flex;
+    justify-content: space-between; /* Pushes content to opposite ends */
+    align-items: center; /* Vertically centers the items */
+    padding: 20px 50px; /* Space above/below and on the sides */
+    background-color: #ffffff; /* White background for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.logo {
+    font-size: 1.5em; /* Larger font size for the brand name */
+    font-weight: bold;
+    color: #007bff; /* A nice, clean blue color */
+}
+
+nav ul {
+    /* Removes default list styling */
+    list-style: none;
+    display: flex; /* Arranges the menu items horizontally */
+}
+
+nav li {
+    margin-left: 30px; /* Spacing between the menu items */
+}
+
+nav a {
+    /* Styles for the links */
+    text-decoration: none; /* Removes the underline */
+    color: #333; /* Dark gray link color */
+    font-weight: 500;
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+nav a:hover {
+    color: #007bff; /* Blue color when the mouse hovers over a link */
+}/* --- HERO SECTION STYLES --- */
+
+.hero-section {
+    /* Centers the content horizontally and adds vertical space */
+    text-align: center;
+    padding: 100px 20px; 
+    background-color: #f4f4f9; /* Same clean background color */
+}
+
+.hero-section h1 {
+    /* Makes the main headline big and bold */
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-section p {
+    /* Styles for the sub-text */
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666; /* Slightly lighter gray */
+}
+
+/* Base style for ALL Call-to-Action buttons (like the one in the header too!) */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff; /* The primary brand blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific style to make the Hero CTA button look bigger */
+.large-cta {
+    padding: 18px 40px;
+    font-size: 1.1em;
+}
+/* --- FEATURES SECTION STYLES --- */
+
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.features-grid {
+    /* Uses CSS Grid to create three equal columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Space between the three boxes */
+    max-width: 1000px; /* Keeps the grid from getting too wide */
+    margin: 0 auto; /* Centers the grid on the page */
+}
+
+.feature-item {
+    padding: 30px;
+    border: 1px solid #ddd; /* Light gray border around the box */
+    border-radius: 8px;
+    text-align: center;
+    background-color: #ffffff; /* White background for a clean look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.feature-item h3 {
+    color: #007bff; /* Blue color for the feature title */
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.5;
+}
+/* --- CONTACT/CLOSING SECTION STYLES --- */
+
+.contact-section {
+    /* Uses a different background color to make it stand out */
+    background-color: #e9ecef; /* A light grey/silver color */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #666;
+}
+/* --- RESPONSIVENESS (MEDIA QUERIES) --- */
+
+@media (max-width: 768px) {
+    /* Rules for screens smaller than 768px wide (like tablets and phones) */
+
+    /* 1. Header Changes: Stack the logo and menu vertically */
+    .main-header {
+        flex-direction: column; /* Stack items top-to-bottom */
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Space below the logo */
+    }
+
+    nav ul {
+        justify-content: center; /* Center the links */
+    }
+
+    nav li {
+        margin: 0 10px; /* Smaller space between links */
+    }
+
+    /* 2. Hero Section Changes: Reduce text size for small screens */
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    /* 3. Features Grid Changes: Stack the three boxes vertically */
+    .features-grid {
+        /* Change from a 3-column grid to a 1-column stack */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
